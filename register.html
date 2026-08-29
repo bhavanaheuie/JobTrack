@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Register - JobTrack</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            JobTrack
+        </div>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="features">
+
+            <h2>Create Your Account</h2>
+
+            <form method="POST">
+
+                <div>
+                    <label>Full Name</label>
+                    <input type="text"
+                           name="name"
+                           placeholder="Enter your name"
+                           required>
+                </div>
+
+                <br>
+
+                <div>
+                    <label>Email</label>
+                    <input type="email"
+                           name="email"
+                           placeholder="Enter your email"
+                           required>
+                </div>
+
+                <br>
+
+                <div>
+                    <label>Password</label>
+                    <input type="password"
+                           name="password"
+                           placeholder="Enter your password"
+                           required>
+                </div>
+
+                <br>
+
+                <button type="submit" class="btn">
+                    Register
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>© 2026 JobTrack</p>
+
+    </footer>
+
+</body>
+
+</html>

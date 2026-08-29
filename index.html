@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Job & Resume Tracker</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            JobTrack
+        </div>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <h1>
+                    Manage Your
+                    <span>Career</span>
+                </h1>
+
+                <p>
+                    Create your resume, manage your skills,
+                    and track your job applications in one place.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="/register" class="btn">
+                        Get Started
+                    </a>
+
+                    <a href="/login" class="btn secondary">
+                        Login
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="features">
+
+            <h2>Features</h2>
+
+            <div class="feature-container">
+
+                <div class="feature-card">
+                    <h3>📄 Resume</h3>
+
+                    <p>
+                        Create and manage your professional
+                        resume.
+                    </p>
+                </div>
+
+
+                <div class="feature-card">
+                    <h3>💼 Jobs</h3>
+
+                    <p>
+                        Track all the jobs you have applied for.
+                    </p>
+                </div>
+
+
+                <div class="feature-card">
+                    <h3>📊 Dashboard</h3>
+
+                    <p>
+                        View your applications and career
+                        progress.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 JobTrack
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

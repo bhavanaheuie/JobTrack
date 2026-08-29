@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Job - JobTrack</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        /* =========================
+           NAVBAR
+           ========================= */
+
+        .navbar {
+            background: #2563eb;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #dbeafe;
+        }
+
+        /* =========================
+           EDIT CONTAINER
+           ========================= */
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* =========================
+           FORM
+           ========================= */
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #d1d5db;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        /* =========================
+           BACK LINK
+           ========================= */
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back:hover {
+            color: #1d4ed8;
+        }
+
+        /* =========================
+           MOBILE RESPONSIVE
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 12px;
+                padding: 18px 20px;
+            }
+
+            nav a {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            .container {
+                width: 85%;
+                margin: 30px auto;
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+         ========================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            JobTrack
+        </div>
+
+        <nav>
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/jobtrack">
+                Job Track
+            </a>
+
+            <!-- FIXED LOGOUT -->
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         EDIT JOB
+         ========================= -->
+
+    <div class="container">
+
+        <h1>
+            Edit Job
+        </h1>
+
+        <form
+            action="/edit_job/{{ job['id'] }}"
+            method="POST"
+        >
+
+            <input
+                type="text"
+                name="company"
+                value="{{ job['company'] }}"
+                placeholder="Company Name"
+                required
+            >
+
+            <input
+                type="text"
+                name="role"
+                value="{{ job['role'] }}"
+                placeholder="Job Role"
+                required
+            >
+
+            <select
+                name="status"
+                required
+            >
+
+                <option
+                    value="Applied"
+                    {% if job['status'] == 'Applied' %}selected{% endif %}
+                >
+                    Applied
+                </option>
+
+                <option
+                    value="Interview"
+                    {% if job['status'] == 'Interview' %}selected{% endif %}
+                >
+                    Interview
+                </option>
+
+                <option
+                    value="Selected"
+                    {% if job['status'] == 'Selected' %}selected{% endif %}
+                >
+                    Selected
+                </option>
+
+                <option
+                    value="Rejected"
+                    {% if job['status'] == 'Rejected' %}selected{% endif %}
+                >
+                    Rejected
+                </option>
+
+            </select>
+
+            <input
+                type="date"
+                name="applied_date"
+                value="{{ job['applied_date'] }}"
+                required
+            >
+
+            <button type="submit">
+                Update Job
+            </button>
+
+        </form>
+
+
+        <a
+            href="/jobtrack"
+            class="back"
+        >
+            ← Back to Job Track
+        </a>
+
+    </div>
+
+</body>
+
+</html>
