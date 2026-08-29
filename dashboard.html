@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -261,3 +262,268 @@
 </body>
 
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - JobTrack</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+        }
+
+        .navbar {
+            background: #1e293b;
+            color: white;
+            padding: 18px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #111827;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 18px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .number {
+            font-size: 40px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .label {
+            color: #64748b;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .blue {
+            color: #2563eb;
+        }
+
+        .cyan {
+            color: #0891b2;
+        }
+
+        .orange {
+            color: #f59e0b;
+        }
+
+        .green {
+            color: #16a34a;
+        }
+
+        .red {
+            color: #ef4444;
+        }
+
+        .manage-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 14px 30px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .manage-btn:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            margin-top: 60px;
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            JobTrack
+        </div>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/jobtrack">Job Track</a>
+            <a href="/login">Logout</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <div class="container">
+
+            <h1>Welcome to JobTrack</h1>
+
+            <p class="subtitle">
+                Your job application dashboard
+            </p>
+
+
+            <div class="stats">
+
+                <!-- Total Jobs -->
+                <div class="card">
+                    <p class="number blue">
+                        {{ total_jobs }}
+                    </p>
+
+                    <p class="label">
+                        Total Jobs
+                    </p>
+                </div>
+
+
+                <!-- Applied -->
+                <div class="card">
+                    <p class="number cyan">
+                        {{ applied_jobs }}
+                    </p>
+
+                    <p class="label">
+                        Applied
+                    </p>
+                </div>
+
+
+                <!-- Interview -->
+                <div class="card">
+                    <p class="number orange">
+                        {{ interview_jobs }}
+                    </p>
+
+                    <p class="label">
+                        Interview
+                    </p>
+                </div>
+
+
+                <!-- Selected -->
+                <div class="card">
+                    <p class="number green">
+                        {{ selected_jobs }}
+                    </p>
+
+                    <p class="label">
+                        Selected
+                    </p>
+                </div>
+
+
+                <!-- Rejected -->
+                <div class="card">
+                    <p class="number red">
+                        {{ rejected_jobs }}
+                    </p>
+
+                    <p class="label">
+                        Rejected
+                    </p>
+                </div>
+
+            </div>
+
+
+            <a href="/jobtrack" class="manage-btn">
+                Manage My Jobs
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        © 2026 JobTrack
+    </footer>
+
+</body>
+
+</html>
+>>>>>>> f3b03ba (Initial JobTrack project)
